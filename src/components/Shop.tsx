@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import shirtCollection from "@/assets/shirt-collection.jpg";
+import cassiusClayShirt from "@/assets/cassius-clay-shirt.jpg";
+import tatteredFlagShirt from "@/assets/tattered-flag-shirt.jpg";
 
 const Shop = () => {
   const products = [
@@ -16,8 +18,8 @@ const Shop = () => {
       id: 2,
       title: "Cassius Clay Dueling Club",
       description: "When honor demanded action",
-      image: shirtCollection,
-      printifyUrl: "#"
+      image: cassiusClayShirt,
+      printifyUrl: "https://printify.com/app/product-details/68aec068eb5eab1df509e9ba?fromProductsPage=1"
     },
     {
       id: 3,
@@ -30,8 +32,8 @@ const Shop = () => {
       id: 4,
       title: "Tattered Flag Collection",
       description: "Revolutionary symbols reimagined",
-      image: shirtCollection,
-      printifyUrl: "#"
+      image: tatteredFlagShirt,
+      printifyUrl: "https://printify.com/app/product-details/68af73bdee19c6da6405fb5c?fromProductsPage=1"
     }
   ];
 
