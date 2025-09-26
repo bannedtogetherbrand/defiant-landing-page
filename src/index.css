@@ -2,14 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Banned Together Brand Design System - Revolutionary aesthetics with clean execution */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+    
+    /* Brand Colors - Revolutionary palette */
+    --revolutionary-black: 0 0% 8%;
+    --revolutionary-white: 0 0% 98%;
+    --blood-red: 0 75% 45%;
+    --eagle-gold: 45 85% 55%;
+    --muted-grey: 0 0% 65%;
+    
+    /* Brand Gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(var(--background)), hsl(0 0% 95%));
+    --cta-gradient: linear-gradient(135deg, hsl(var(--revolutionary-black)), hsl(0 0% 15%));
+    
+    /* Typography Scale - Poster-style hierarchy */
+    --font-hero: 'Inter', -apple-system, system-ui, sans-serif;
+    --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+    
+    /* Shadows & Effects */
+    --shadow-revolutionary: 0 10px 40px -10px hsl(var(--revolutionary-black) / 0.2);
+    --shadow-cta: 0 8px 25px -8px hsl(var(--revolutionary-black) / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -17,17 +38,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--revolutionary-black);
+    --primary-foreground: var(--revolutionary-white);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--revolutionary-white);
+    --secondary-foreground: var(--revolutionary-black);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 92%;
+    --muted-foreground: var(--muted-grey);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--blood-red);
+    --accent-foreground: var(--revolutionary-white);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -101,5 +122,45 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+@layer components {
+  /* Revolutionary Button Variants */
+  .btn-revolutionary {
+    @apply bg-primary text-primary-foreground font-bold tracking-wide uppercase;
+    @apply px-8 py-4 rounded-sm transition-all duration-300;
+    @apply shadow-[var(--shadow-cta)] hover:shadow-[var(--shadow-revolutionary)];
+    @apply hover:scale-105 active:scale-95;
+    background: var(--cta-gradient);
+  }
+  
+  .btn-hero {
+    @apply btn-revolutionary text-lg;
+    @apply border-2 border-transparent hover:border-accent;
+  }
+  
+  /* Typography Classes */
+  .text-hero {
+    @apply text-5xl md:text-7xl font-black tracking-tight;
+    font-family: var(--font-hero);
+    line-height: 0.9;
+  }
+  
+  .text-subhero {
+    @apply text-xl md:text-2xl font-medium tracking-wide;
+    font-family: var(--font-hero);
+  }
+  
+  .text-mission {
+    @apply text-lg md:text-xl leading-relaxed font-medium;
+    font-family: var(--font-body);
+  }
+  
+  /* Revolutionary Section Backgrounds */
+  .bg-hero {
+    background: var(--hero-gradient);
   }
 }
